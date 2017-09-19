@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { connect } from "react-redux";
 import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">Hello World</div>
+      <div className="App">{JSON.stringify(this.props)}</div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return state;
+};
+
+export default connect(mapStateToProps)(App);
